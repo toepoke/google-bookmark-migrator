@@ -1,0 +1,98 @@
+
+<p>
+	<strong>Paste your Google Bookmarks export here !</strong>
+</p>
+
+<!--
+
+	Don't look at this .. it's horrible and hacky.  
+	It's only a one off, no point wasting time making it nice :-)
+	
+-->	
+
+
+<!--
+	I know I said this was quite and dirty, but I'm not using embedded styles ... I'm not a savage! ;-)
+-->
+<style>
+	body {
+		font-family: Arial;
+	}
+	.warning {
+		color: red;
+		font-weight: bold;
+	}
+	.indent {
+		margin-left: 3em;
+	}
+	.aside {
+		font-style: italic;
+	}
+</style>
+<h2>Intro</h2>
+<p>
+	Small helper to migrate your <a href='https://www.google.com/bookmarks/'>Google Bookmarks</a> to <a href='https://tagpacker.com/'>TagPacker</a>.
+</p>
+
+<h2 class='warning'>Warning / Disclaimer / Get out of jail free card</h2>
+<p class='warning'>
+	WARNING: This is just something I knocked up to solve a problem I was facing.  Use at your own risk.  If you lose any data, your're on your own I'm afraid.
+	Keep a copy of your exported bookmarks, in addition to this file.
+</p>
+
+<p>
+	With all that said, this should be pretty straight-forward :-)
+</p>
+
+<h2>Analyse</h2>
+<p>
+	You've already copied and pasted this bit of code into your export file from <a href='https://www.google.com/bookmarks/'>Google Bookmarks</a>, yeah?
+</p>
+
+<div class="indent">
+	<button id="analyse">Analyse</button>
+</div>
+<p>
+	When prompted, save the CSV file somewhere convenient.
+</p>
+
+<h2>Review</h2>
+<p>
+	Okay, we've now got a CSV file with thousands of rows.
+	Load the CSV file into Excel or Google Sheets or whatever 
+	(it's a tab delimited file, you may be best opening a fresh worksheet
+	and pasting the file contents in).
+</p>
+<p>
+	In the spreadsheet you'll see a <strong>Delete</strong> column.
+	Enter <i>anything</i> in this column and that link <strong>won't</strong>
+	be imported later.  You can just delete the row if you'd prefer.
+</p>
+<p>
+	You can also order by the <strong>Date</strong> field and maybe just
+	delete any thing over 5 years old?  Your choice.
+</p>
+
+<h2>Upload Reviewed Spreadsheet</h2>
+<p>
+	Once you've completed your review, copy the content to the clipboard 
+	and paste into the <strong>Reviewed Bookmarks</strong> textbox below:
+</p>
+<label for="uploadData">Reviewed Bookmarks</label>
+<textarea id="uploadData" cols="200" rows="20">
+
+</textarea>
+<p>
+	And click the button below.
+</p>
+<button id="upload">Upload Reviewed</button>
+
+<p>
+	The script will then generate multiple bookmark files so you can safetly
+	upload in batches rather than one large file.
+</p>
+
+<script src="export-to-csv.js">
+</script>
+
+
